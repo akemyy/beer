@@ -15,11 +15,11 @@ em um outro bucket S3 com o nome de cleaned em formato csv.
 - Conta amazon
 Como executar
 
-'''
+```
 terraform init
 terraform plan
 terraform apply
-'''
+```
 
 ###### Próximos passos:
 - melhorar a organização das pastas
