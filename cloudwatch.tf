@@ -5,6 +5,9 @@ resource "aws_cloudwatch_event_rule" "console" {
   schedule_expression = "cron(0/3 * ? * MON-FRI *)"
   #role_arn            = aws_iam_role.iam_for_lambda.arn
   #corrigir para o lambda correto
+  depends_on = [
+    "aws_lambda_function.lambda-to-s3"
+  ]
   event_pattern = <<EOF
 {
   "detail-type": [
@@ -16,9 +19,9 @@ EOF
 
 
 resource "aws_cloudwatch_event_target" "yada" {
-  target_id = "Yada"
+  rule      = aws_cloudwatch_event_rule.console.name
+  target_id = "console"
   arn       = aws_lambda_function.lambda-to-s3.arn
-  rule      = aws_cloudwatch_event_rule.console.id
 }
 
 data "aws_iam_policy_document" "topic_policy" {

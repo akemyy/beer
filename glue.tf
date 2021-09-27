@@ -5,7 +5,7 @@ resource "aws_glue_catalog_database" "databasecleaned" {
 resource "aws_glue_catalog_table" "cerveja" {
   name          = "cerveja"
   database_name = "databasecleaned"
-  depends_on = [aws_glue_catalog_database.databasecleaned]
+  depends_on    = [aws_glue_catalog_database.databasecleaned]
 }
 resource "aws_glue_classifier" "example" {
   name = "example"
