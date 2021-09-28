@@ -1,10 +1,7 @@
 resource "aws_cloudwatch_event_rule" "console" {
   name        = "CloudWatch-to-lambda"
   description = "Um CloudWatch Event que dispara a cada 5 minutos uma função Lambda para alimentar o Kinesis Stream"
-  #schedule_expression = "cron(0/5 * * * ? *)"
-  schedule_expression = "cron(0/3 * ? * MON-FRI *)"
-  #role_arn            = aws_iam_role.iam_for_lambda.arn
-  #corrigir para o lambda correto
+  schedule_expression = "cron(0/3 * ? * FRI *)"
   depends_on = [
     "aws_lambda_function.lambda-to-s3"
   ]

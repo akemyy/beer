@@ -13,7 +13,7 @@ s3_client = boto3.client("s3")
 cervejas = []
 
 def lambda_handler(event, context):
-    for i in range(100):
+    for i in range(3):
         r = http.request('GET',url)
         cerveja = json.loads(r.data.decode("utf8"))
         cervejas.append(cerveja)

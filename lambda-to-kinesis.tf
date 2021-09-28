@@ -28,6 +28,7 @@ resource "aws_lambda_function" "lambda-to-kinesis" {
   role          = aws_iam_role.iam_for_lambda_kinesis.arn
   handler       = "main.lambda_handler"
   runtime       = "python3.7"
+  timeout       = 120
 }
 
 resource "aws_iam_role" "iam_for_lambda_kinesis" {
@@ -49,4 +50,14 @@ resource "aws_iam_role" "iam_for_lambda_kinesis" {
 }
 EOF
 
+}
+
+resource "aws_lambda_event_source_mapping" "example" {
+  event_source_arn  = aws_kinesis_stream.kinesis_stream.arn
+  function_name     = aws_lambda_function.lambda-to-kinesis.arn
+  starting_position = "LATEST"
+
+  depends_on = [
+    aws_iam_role_policy_attachment.kinesis_processing
+  ]
 }
