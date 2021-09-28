@@ -17,7 +17,7 @@ resource "aws_lambda_permission" "allow_cloudwatch" {
 
 resource "aws_lambda_alias" "lambda_kinesis_alias" {
   name             = "lambdakinesisalias"
-  description      = "a sample description"
+  description      = "Função Lambda para alimentar o Kinesis Stream"
   function_name    = aws_lambda_function.lambda-to-kinesis.function_name
   function_version = "$LATEST"
 }
