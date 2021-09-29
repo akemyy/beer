@@ -1,7 +1,7 @@
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "${path.module}/scrip-lambda-to-s3.py"
-  output_path = "${path.module}/scrip-lambda-to-s3.py.zip"
+  source_file = "${path.module}/script-lambda-to-s3.py"
+  output_path = "${path.module}/script-lambda-to-s3.py.zip"
 }
 resource "aws_lambda_permission" "allow_cloudwatch_test" {
   statement_id  = "AllowExecutionFromCloudWatch"
