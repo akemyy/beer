@@ -20,6 +20,4 @@ resource "aws_glue_classifier" "example" {
   }
 }
 
-#rds
-
 

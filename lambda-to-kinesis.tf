@@ -1,8 +1,8 @@
 
 data "archive_file" "lambda_kinesis" {
   type        = "zip"
-  source_file = "${path.module}/main.py"
-  output_path = "${path.module}/main.py.zip"
+  source_file = "${path.module}/script-lambda-kinesis.py"
+  output_path = "${path.module}/script-lambda-kinesis.py.zip"
 }
 
 resource "aws_lambda_permission" "allow_cloudwatch" {

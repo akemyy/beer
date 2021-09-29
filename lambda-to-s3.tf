@@ -72,9 +72,6 @@ resource "aws_lambda_permission" "allow_bucket" {
 
 resource "aws_s3_bucket_policy" "b" {
   bucket = aws_s3_bucket.cleaned-000.id
-
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression's result to valid JSON syntax.
   policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
@@ -94,5 +91,3 @@ resource "aws_s3_bucket_policy" "b" {
     ]
   })
 }
-
-/* FailedInvocations */

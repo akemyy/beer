@@ -40,13 +40,12 @@ def _get_key():
         + "MIN)"
     )
     return KEY
-#CloudWatchEventsInvocationAccess
 
 def jsontocsv(json):
     csvio = io.StringIO()
     writer = csv.writer(csvio)
     writer.writerow(['id','name', 'abv', 'ibu', 'target_fg', 'target_og', 'ebc', 'srm', 'ph'])
-    #print(len(json))
+
     for i in json:
         j = i[0]
         writer.writerow([j.get('id'), j.get('name'),j.get('abv'), j.get('ibu'), j.get('target_fg'), j.get('target_og'), j.get('ebc'), j.get('srm'),j.get('ph')])
