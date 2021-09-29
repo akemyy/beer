@@ -29,3 +29,5 @@ terraform apply
 - Melhorar o modelo 
     - Clusterizar as cervejas e tentar desenvolver uma forma de ter mais similaridade entre os atributos para cada Clusterizar
 - Retirar duplicidade de linhas que o lambda grava nas chamadas para a api
+
+Obs: O cloudwatch está chamando o lambda do s3 pois a integração do kinesis não foi finalizada então essa foi a forma de conseguir o csv para fazer o modelo.
