@@ -8,8 +8,7 @@ arquitetura que consome a Punk Api no endpoint https://api.punkapi.com/v2/beers/
 em um outro bucket S3 com o nome de cleaned em formato csv.
 - Tabela com os dados do bucket cleaned.
 - Modelo de machine learning que classifique as cervejas em seus respectivos ibus.
-[Desenho da arquitetura](Arquitetura.png)
-
+![Desenho da arquitetura](Arquitetura.png?raw=true "Desenho da arquitetura")
 ###### Dependências 
 - Terraform 
 - Conta amazon
